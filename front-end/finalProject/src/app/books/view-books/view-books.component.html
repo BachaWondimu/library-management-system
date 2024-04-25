@@ -1,0 +1,51 @@
+<div class="container">
+
+    @if(auth.is_admin()){
+    <button id="addbook">
+        <a [routerLink]="['','add-book']">
+
+            Add book
+        </a>
+    </button>
+    }
+    <table>
+        <thead>
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Availabe</th>
+                <th>Borrow</th>
+                @if(auth.is_admin()){
+                <th>Update</th>
+                }
+            </tr>
+        </thead>
+        @for(book of books();track book.isbn){
+
+        <tr>
+            <td>{{book.isbn}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td>{{getReturnedCopiesCount(book)}}</td>
+            <td>
+                <button [disabled]="getReturnedCopiesCount(book) == 0" (click)="borrowBook(book.isbn)">Borrow</button>
+            </td>
+            @if(auth.is_admin()){
+
+            <td>
+                <button>
+                    <a [routerLink]="['','update-book',book.isbn]">
+                        Update
+                    </a>
+                </button>
+            </td>
+            }
+        </tr>
+        }@empty {
+        <p>Loading...</p>
+        }
+    </table>
+</div>

@@ -1,0 +1,38 @@
+<div class="user-container">
+
+    <h1 id="userHeader">Welcome {{auth.$state().data.user.fullname}}!</h1>
+
+    <div class="search-div">
+        <form class="form-bar" [formGroup]="form" (ngSubmit)="getBook()">
+            <input type="text" placeholder="Search for a book" formControlName="search" class="search-bar">
+            <button class="search-button" (click)="getBook()">Search</button>
+        </form>
+    </div>
+
+    @if(get_book.$book_input().data._id){
+    <div class=table-div>
+
+        <table class="book-table">
+            <thead>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ get_book.$book_input().data.isbn }}</td>
+                    <td>{{ get_book.$book_input().data.title }}</td>
+                    <td>{{ get_book.$book_input().data.author }}</td>
+                    <td>{{ get_book.$book_input().data.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    }@else {}
+
+
+</div>

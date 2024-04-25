@@ -1,0 +1,32 @@
+<div class="container">
+
+    @if(inventory().length > 0){
+    <table>
+        <thead>
+
+            <tr>
+                <th>Isbn</th>
+                <th>Title</th>
+                <th>DueDate</th>
+                <th>Return</th>
+            </tr>
+        </thead>
+        @for(book of inventory();track book.isbn){
+
+        <tr>
+            <td>{{book.isbn}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.dueDate}}</td>
+            <td>
+                <button (click)="return_book(book.isbn,book.copy_id)">Return</button>
+            </td>
+        </tr>
+        }@empty {
+        <p>loading...</p>}
+
+
+    </table>
+    }@else {
+    <p>You don't have any borrowed books</p>
+    }
+</div>

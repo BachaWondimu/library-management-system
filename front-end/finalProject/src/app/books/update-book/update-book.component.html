@@ -1,0 +1,76 @@
+<div class="container">
+
+    @if(book_found()){
+
+    <div>
+
+        <h2>Book Details</h2>
+        <div class="book-details">
+            <p><strong>ISBN:</strong></p>
+            <p>{{book().isbn}}</p>
+        </div>
+        <div class="book-details">
+            <p><strong>Title:</strong></p>
+            <p>{{book().title}}</p>
+        </div>
+        <div class="book-details">
+            <p><strong>Author:</strong></p>
+            <p>{{book().author}}</p>
+        </div>
+        <div class="book-details">
+            <p><strong>Total Copies:</strong></p>
+            <p>{{book().copies.length}}</p>
+        </div>
+        <div class="book-details add-copies-container">
+            <p><strong>Add Copies: </strong></p>
+            <form class="add-copies" [formGroup]="form">
+                <input type="number" id="addcopies" formControlName="number_of_copies" />
+
+                <button id="addcopies" [disabled]="form.invalid" (click)="add_copies()">Add Copies</button>
+                @if(number_of_copies.invalid && (number_of_copies.touched || number_of_copies.dirty)){
+                <div class="error">
+
+                    @if(number_of_copies.errors?.['required']){
+                    Number of copies is required
+                    }
+                    @if(number_of_copies.errors?.['min']){
+                    Number of copies must be atleast 1
+                    }
+
+                </div>
+                }
+            </form>
+        </div>
+        <div class="book-details">
+            <button id="delete" [disabled]="form.invalid" (click)="delete_book(book().isbn)">Delete Book</button>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Copy ID</th>
+                <th>Status</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(bookcopy of book().copies;track bookcopy._id){
+            <tr>
+                <td>{{bookcopy._id}}</td>
+                <td>{{bookcopy.status}}</td>
+
+                <td>
+                    <button [disabled]="bookcopy.status === 'Borrowed'"
+                        (click)="delete_copy(bookcopy._id)">Delete</button>
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+    }
+    @else{
+    <p>Book not found</p>
+    }
+</div>

@@ -1,0 +1,93 @@
+### Testing Post Request ###
+
+POST http://localhost:3000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzOTAxNzA5fQ.eOYfx-DkTwNvX3PcBFR0hMVKOjAVFztRJOJRGMLGQ2c
+Content-Type: application/json
+
+{
+    "isbn": "9780062315011",
+    "title": "Angular Framework",
+    "author": "Paulo Coelho",
+    "number_of_copies": 20,
+    "price": 27.00
+  
+}
+###
+POST http://localhost:3000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzOTAxNzA5fQ.eOYfx-DkTwNvX3PcBFR0hMVKOjAVFztRJOJRGMLGQ2c
+Content-Type: application/json
+
+{
+    "isbn": "9780062315020",
+    "title": "Your Brain Is a River, Not a Rock",
+    "author": "Dr. Fredrick Travis",
+    "price": 50.00
+  
+}
+###
+POST http://localhost:3000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzOTAxNzA5fQ.eOYfx-DkTwNvX3PcBFR0hMVKOjAVFztRJOJRGMLGQ2c
+Content-Type: application/json
+
+{
+    "isbn": "9780062315002",
+    "title": "Introduction to mongodb",
+    "author": "Jane Johnson",
+    "price": 40.00
+  
+}
+###
+POST http://localhost:3000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzODA1NDk4fQ.Dz6PssoGNr4MYmZLgejAw56_vyInA33k8fDadYxnlqM
+Content-Type: application/json
+
+{
+    "isbn": "9780062315003",
+    "title": "Introduction to Boxing",
+    "author": "Muhamed Ali",
+    "price": 40.00
+  
+}
+
+### Testing Get Request ###
+GET http://localhost:3000/books
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzODA1NDk4fQ.Dz6PssoGNr4MYmZLgejAw56_vyInA33k8fDadYxnlqM
+Content-Type: application/json
+
+### Testing Get Request by ID ###
+GET http://localhost:3000/books/9780062315011
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzODA1NDk4fQ.Dz6PssoGNr4MYmZLgejAw56_vyInA33k8fDadYxnlqM
+Content-Type: application/json
+
+### Testing Get Request by Title ###
+GET http://localhost:3000/books/title/Angular Framework
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzODA1NDk4fQ.Dz6PssoGNr4MYmZLgejAw56_vyInA33k8fDadYxnlqM
+Content-Type: application/json
+
+### Testing Put Request by ID ###
+PUT http://localhost:3000/books/6626becb60972cf27d0e67fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzODA1NDk4fQ.Dz6PssoGNr4MYmZLgejAw56_vyInA33k8fDadYxnlqM
+Content-Type: application/json
+
+{
+    "isbn": "9780062315004",
+    "title": "Andvanced Boxing Techniques",
+    "author": "Mohamed Ali",
+    "price": 20.00
+  
+}
+
+### Testing Delete Request by ID ###
+DELETE http://localhost:3000/books/6626becb60972cf27d0e67fa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzODA1NDk4fQ.Dz6PssoGNr4MYmZLgejAw56_vyInA33k8fDadYxnlqM
+Content-Type: application/json
+###
+
+
+### Testing passed DueDate handler ###
+GET http://localhost:3000/books/passed-due-date
+### Testing sign_up 1 ###
+### Testing sign_up 1 ###
+Authorization: Bearer  
+Content-Type: application/json
+####

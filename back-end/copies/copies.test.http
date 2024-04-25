@@ -1,0 +1,8 @@
+### Testing Post Request ###
+POST http://localhost:3000/books/888888888888/copies
+Content-Type: application/json
+
+{
+    "bookId": 888888888888,
+    "copies": 5
+    }

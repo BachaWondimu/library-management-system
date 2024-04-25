@@ -1,0 +1,61 @@
+<div class="form-div">
+
+    <form class="addbook-form" [formGroup]="form">
+
+        <label for="isbn">ISBN:</label>
+        @if(isbn.invalid && (isbn.touched || isbn.dirty)){
+        <div class="error">
+            @if(isbn.errors?.['required']){
+            ISBN is required
+            }
+        </div>
+
+        }
+        <input type="text" id="isbn" name="isbn" required formControlName="isbn">
+
+        <label for="title">Title:</label>
+        @if(title.invalid && (title.touched || title.dirty)){
+        <div class="error">
+            @if(title.errors?.['required']){
+            Title is required
+            }
+        </div>
+        }
+        <input type="text" id="title" name="title" required formControlName="title">
+
+        <label for="author">Author:</label>
+        @if(author.invalid && (author.touched || author.dirty)){
+        <div class="error">
+            @if(author.errors?.['required']){
+            Author is required
+            }
+        </div>
+        }
+        <input type="text" id="author" name="author" required formControlName="author">
+
+        <label for="price">Price:</label>
+        @if(price.invalid && (price.touched || price.dirty)){
+        <div class="error">
+            @if(price.errors?.['required']){
+            Price is required
+            }
+        </div>
+        }
+        <input type="number" id="price" name="price" required formControlName="price">
+
+        <label for="copies">Number of copies:</label>
+        @if(copies.invalid && (copies.touched || copies.dirty)){
+        <div class="error">
+            @if(copies.errors?.['required']){
+            Number of copies is required
+            }
+            @if(copies.errors?.['min']){
+            Number of copies must be at least 1
+            }
+        </div>
+        }
+        <input type="number" id="copies" name="copies" required formControlName="copies">
+        <button class="form-button" [disabled]="form.invalid" (click)="addBook()">Add book</button>
+    </form>
+
+</div>

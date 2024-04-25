@@ -1,0 +1,36 @@
+<div class="form-div">
+    <form class="signup-form" [formGroup]="form">
+
+        <label>Full Name*</label>
+        <input placeholder="full name" formControlName="fullname" />
+        @if(fullname.invalid && (fullname.dirty || fullname.touched)){
+        @if(fullname.errors?.['required']){<div>fullname required</div>}
+        }
+
+        <label>Email*</label>
+        <input placeholder="email" formControlName="email" />
+
+        @if(email.invalid && (email.dirty || email.touched)){
+        @if(email.errors?.['required']){<div>email required</div>}
+
+        @else if(email.errors?.['email']){<div>email format not valid</div>}
+        }
+
+        <label>Password*</label>
+        <input placeholder="password" formControlName="password" type="password" />
+
+        @if(password.invalid && (password.dirty || password.touched)){
+        <div>
+            @if(password.errors?.['required']){<div>password required</div>}
+            @else if(form.errors?.['minLength']){<div>password must atleast be 3 characters</div>}
+        </div>
+        }
+
+        <label>Re-Password*</label>
+        <input placeholder="re-password" formControlName="password2" type="password" />
+        @if(form.errors?.['unmatch']){<div>Passwords do not match</div>}
+
+
+        <button class="form-button" [disabled]="form.invalid" (click)="signup()">Register</button>
+    </form>
+</div>

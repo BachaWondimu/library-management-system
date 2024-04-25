@@ -1,0 +1,56 @@
+### Testing sign_up 1 ###
+
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+  "fullname": "Bacha Wondimu",
+  "email": "Bacha@miu.edu",
+  "password": "password123",
+  "balance": 0,
+  "role": "LIBRARIAN"
+}
+
+### Testing sign_up 2 ###
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+  "fullname": "Charlie Brown",
+  "email": "Charlie@miu.edu",
+  "password": "password123",
+  "balance": 0,
+  "role": "USER"
+}
+### Testing sign_up 3###
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+  "fullname": "Bob Smith",
+  "email": "Bob@miu.edu",
+  "password": "password123",
+  "balance": 0,
+  "role": "USER"
+}
+
+
+### Testing sign_in ###
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+    "email": "Bacha@miu.edu",
+    "password": "password123"
+}
+### TOKEN:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVkNjllZTcyYzQxNWFmMDRkOTAiLCJmdWxsbmFtZSI6IkJhY2hhIFdvbmRpbXUiLCJlbWFpbCI6IkJhY2hhQG1pdS5lZHUiLCJyb2xlIjoiTElCUkFSSUFOIiwiaWF0IjoxNzEzOTAxNzA5fQ.eOYfx-DkTwNvX3PcBFR0hMVKOjAVFztRJOJRGMLGQ2c
+
+### Testing sign_in ###
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+  "email": "Bob@miu.edu",
+  "password": "password123"
+}
+### Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjI2OGVlMTllZTcyYzQxNWFmMDRkOTQiLCJmdWxsbmFtZSI6IkJvYiBTbWl0aCIsImVtYWlsIjoiQm9iQG1pdS5lZHUiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcxMzkwMTY3N30.1iBiRPX8Z2JvQHfnnPNeohY8Rp-LKGuXfXCXA6ONXHQ

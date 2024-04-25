@@ -1,0 +1,100 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#aboutHeader {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.developersClass {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.developersClass li {
+    margin: 0 15px;
+    font-size: 1.2em;
+    color: #555555;
+    text-transform: uppercase;
+}
+
+/* Image Styles */
+.angular-image,
+.miu-image,
+.ts-image {
+    width: 20%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.angular-image:hover,
+.miu-image:hover,
+.ts-image:hover {
+    transform: scale(1.05);
+}
+
+.about-container {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.about-container h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.about-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555555;
+}
+
+.developers-container {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.developers-container h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+    }
+
+    .angular-image,
+    .miu-image,
+    .ts-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

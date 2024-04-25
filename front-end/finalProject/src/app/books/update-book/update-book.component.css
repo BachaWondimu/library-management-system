@@ -1,0 +1,153 @@
+div {
+    width: 80%;
+    margin-left: 10px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #009879;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #333;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+    /* Centers the content of the table cells */
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.add-copies-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-details,
+.add-copies-container {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    background-color: #009879;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input#addcopies {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    width: 50px;
+}
+
+button#addcopies {
+    background-color: #009879;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#delete {
+    background-color: red !important;
+}
+
+.container {
+    margin: 30px;
+}
